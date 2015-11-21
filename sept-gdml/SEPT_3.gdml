@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE gdml [
+	<!ENTITY MATERIALS SYSTEM "inc/materials.gdml">
+	<!ENTITY COLORS SYSTEM "inc/colors.gdml">
+	<!ENTITY TRIGONOMETRIC SYSTEM "inc/TrigonometricFunctions.gdml">
+	<!ENTITY OPTICAL_PROPERTIES SYSTEM "inc/optical.gdml">
+	<!ENTITY HALFSENSOR_STRUCTURE SYSTEM "inc/sept_halfsensor_structure.gdml">
+	<!ENTITY HALFSENSOR_POSITIONS SYSTEM "inc/sept_halfsensor_positions.gdml"> 
+	<!ENTITY HALFSENSOR_SOLIDS SYSTEM  "inc/sept_halfsensor_solids.gdml">  ] >
+
+<gdml 	xmlns:gdml="http://cern.ch/2001/Schemas/GDML"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="schema/gdml.xsd" >
+
+<!-- Here, some files from the ./inc/ directory are loaded and included -->
+&OPTICAL_PROPERTIES;f
+&TRIGONOMETRIC;
+&COLORS;
+&MATERIALS;
+
+
+<define>
+	<position name="origin" x="0" y="0" z="0" unit="mm"/>
+	
+	<quantity name="cutValueWorld"		type="length" value="100/1000" unit="mm" />	
+
+	<constant name="PI" value="pi"/>
+
+	<rotation name="RotateX180+" x="PI" unit="rad" />
+	<rotation name="RotateX180+" x="PI" unit="rad" />
+	<rotation name="RotateY90+" y="90" unit="deg"/>
+	<rotation name="RotateZ90+" z="90" unit="deg"/>	
+	 
+	<!-- Load Halfsensor Positions -->
+        &HALFSENSOR_POSITIONS;
+</define>
+
+
+
+<materials>
+	<element Z="5." formula="Bor" name="Bor" >
+		<atom type="A" value="10.81" />
+	</element>
+
+	<element Z="26." formula="Fe" name="Iron" >
+		<atom type="A" value="55.845" />
+	</element>
+
+	<element Z="60." formula="Nd" name="Neodym" >
+		<atom type="A" value="144.242" />
+	</element>
+
+	<material name="NdFeB" formula="Ne2Fe14B" Z="60">
+		<D value="7.4" unit="g/cm3"/>
+		<composite n="2.0" ref="Neodym" />
+		<composite n="14.0" ref="Iron" />
+		<composite n="1.0" ref="Bor" />
+	</material>
+
+<!--   den schei hier noch anpassen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+	
+	<material name="ParyleneN" formula="xyz" Z="33">
+		<D value="1.0" unit="g/cm3" />
+		<composite n="2.0" ref="Neodym" />
+		<composite n="1.0" ref="Bor" />
+
+	</material>
+</materials>
+
+
+<solids>
+	<box name="sensor" x="800.0" y="800.0" z="800.0" lunit="mm" />
+
+	<!-- Load Halfsensor Solids -->
+	&HALFSENSOR_SOLIDS;
+</solids>
+
+
+<structure>
+	<!-- Load Halfsensor Structure -->
+	&HALFSENSOR_STRUCTURE;
+
+	<volume name="sensor" >
+		<materialref  ref="HiVacuum" />
+		<solidref     ref="sensor" />
+		<colorref     ref="clWhite" />
+
+		<physvol>
+			<volumeref   ref="halfsensor" />
+			<positionref ref="halfsensor_pos" />
+		</physvol>
+	</volume>
+</structure>
+
+<setup name="Default" version="1.0" >
+    <world ref="sensor" />
+</setup>
+
+</gdml>

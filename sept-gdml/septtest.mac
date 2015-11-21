@@ -1,0 +1,48 @@
+##################################################
+# Macro File for HETDM v. 2.1
+# (c) 2012 by Jan Grunau
+# CAU Kiel
+##################################################
+#/G4ET/readXML			./home/marlon/Schreibtisch/10geant/sims/winkeltest/winkeltest.gdml
+#/vis/verbose 0
+
+/G4ET/GDMLfile			/home/marlon/Schreibtisch/10geant/sims/säpt/säptgdml/SEPT.gdml
+/G4ET/GDMLbuild
+/control/alias			theN 20000000
+/run/numberOfThreads		4
+/run/eventModulo 0 1
+/run/initialize
+
+/G4ET/TxtFormat			EVT_ID DET_ID PART_NAME PV_THETA PV_PHI E_TOT
+/G4ET/OutputFileTxt		/home/marlon/Schreibtisch/10geant/sims/säpt/säpt.txt
+/G4ET/OutputFileVis		/home/marlon/Schreibtisch/10geant/sims/säpt/säpt2
+
+
+#/gps/source/clear
+/gps/source/add			1
+/gps/particle			geantino
+/gps/ene/type			Mono
+/gps/ene/mono			4 GeV
+/gps/pos/type           	Surface
+/gps/pos/shape          	Sphere
+/gps/pos/centre         	0 0 0 mm
+/gps/pos/radius         	180 cm
+/gps/ang/type           	cos
+/gps/ang/surfnorm       	true
+
+
+#/gps/hist/type          	biaspt
+#/gps/hist/point         	0. 0.
+#/gps/hist/point         	0.5 1.
+#/gps/hist/point         	1. 0.
+
+/vis/open HepRepFile
+/vis/drawVolume
+/vis/viewer/flush
+/vis/scene/add/trajectories
+/vis/scene/add/hits
+# (if you prefer refreshing each event, comment out next line)
+/vis/scene/endOfEventAction accumulate 1000
+
+#/run/beamOn 2
+/run/beamOn {theN}

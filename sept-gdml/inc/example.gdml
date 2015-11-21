@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE gdml [
+	<!ENTITY MATERIALS SYSTEM "./inc/materials.gdml">
+	<!ENTITY COLORS SYSTEM "./inc/colors.gdml">
+	<!ENTITY TRIGONOMETRIC SYSTEM "./inc/TrigonometricFunctions.gdml">
+	<!ENTITY OPTICAL_PROPERTIES SYSTEM "./inc/optical.gdml">
+]>
+<!--
+GDML example file for the G4ET program
+Important for tesselated solids: faces must be described anti-clockwise when looking from the outside of the solid otherwise there will be an Inf loop in the simulation!
+-->
+
+<gdml xmlns:gdml="http://cern.ch/2001/Schemas/GDML"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="schema/gdml.xsd" >
+
+&OPTICAL_PROPERTIES;
+&COLORS;
+&TRIGONOMETRIC;
+&MATERIALS;
+
+<define>
+	<!-- Quantitys -->
+	<quantity name="cutValueWorld"		type="length" value="10/1000" unit="mm" />
+	<position name="origin" x="" y="" z="" lunit="cm"/>
+	<matrix name="MAT_SPECULARLOBECONSTANT" coldim="2" values="
+	 1.0e-6 0.5
+	10.0e-6 0.5" />
+	<matrix name="MAT_SPECULARSPIKECONSTANT" coldim="2" values="
+	 1.0e-6 0.5
+	10.0e-6 0.5" />
+</define>
+
+<solids>
+	<!-- World -->
+	<box name = "world" x= "10" y= "10" z= "10" lunit= "cm" />
+	
+	<box name = "Detector" x= "15" y= "10" z= "30" lunit= "mm" />
+	
+	<!-- optical properties possible parameters:
+	<opticalsurface name="" model="" finish="" type="" value=""/>
+	model	glisur	|| 0
+		unified	|| 1
+	
+	finish	polished		|| 0
+		polishedfrontpainted	|| 1
+		polishedbackpainted	|| 2
+		ground			|| 3
+		groundfrontpainted	|| 4
+		groundbackpainted	|| 5
+		polishedlumirrorair	|| 6
+		polishedlumirrorglue	|| 7
+		polishedair		|| 8
+		polishedteflonair	|| 9
+		polishedtioair		|| 10
+		polishedtyvekair	|| 11
+		polishedvm2000air	|| 12
+		polishedvm2000glue	|| 13
+		etchedlumirrorair	|| 14
+		etchedlumirrorglue	|| 15
+		etchedair		|| 16
+		etchedteflonair		|| 17
+		etchedtioair		|| 18
+		etchedtyvekair		|| 19
+		etchedvm2000air		|| 20
+		etchedvm2000glue	|| 21
+		groundlumirrorair	|| 22
+		groundlumirrorglue	|| 23
+		groundair		|| 24
+		groundteflonair		|| 25
+		groundtioair		|| 26
+		groundtyvekair		|| 27
+		groundvm2000air		|| 28
+		groundvm2000glue	|| 29
+	
+	type	dielectric_metal	|| 0
+		dielectric_dielectric	|| 1
+		dielectric_LUT		|| 2
+		firsov			|| 3
+		x_ray			|| 4
+	-->
+	<opticalsurface name="surf_prop_1" model="unified" finish="ground" type="dielectric_dielectric" value="1.0" >
+		<property name="REFLECTIVITY" ref="REFLECTIVITY_ALL" />
+		<property name="SPECULARLOBECONSTANT" ref="MAT_SPECULARLOBECONSTANT" />
+		<property name="SPECULARSPIKECONSTANT" ref="MAT_SPECULARSPIKECONSTANT" />
+	</opticalsurface>
+</solids>
+<structure>
+	<volume name="Detector">
+		<materialref ref="BGO" />
+		<solidref ref="Detector" />
+		<colorref ref="clGreen1" />
+		<sd detail="true" zeroE="true" />
+	</volume>
+	<volume name="Detector2">
+		<materialref ref="BGO2" />
+		<solidref ref="Detector" />
+		<colorref ref="clGreen1" />
+		<sd detail="true" zeroE="true" />
+	</volume>
+	
+	<!-- subworld assembly -->
+	<!-- necessary to set cuts in world volume -->
+	<volume name="SubWorld">
+		<materialref ref="HiVacuum" />
+		<solidref ref="world" />
+		<colorref ref="clWhite" />
+		<region cutValue="cutValueWorld" />
+		<physvol name="Detector">
+			<volumeref ref="Detector" />
+			<sdID id="1"/>
+			<positionref ref="origin" />
+		</physvol>
+		<physvol name="Detector2">
+			<volumeref ref="Detector2" />
+			<sdID id="2"/>
+			<position x="" y="10" z="" lunit="mm" />
+		</physvol>
+	</volume>
+	<volume name="World" >
+		<materialref ref="HiVacuum" />
+		<solidref ref="world" />
+		<colorref ref="clWhite" />
+		<physvol name="SubWorld">
+			<volumeref ref="SubWorld" />
+			<positionref ref="origin" />
+		</physvol>
+	</volume>
+	
+	<!--<skinsurface name="skin_surface_1" surfaceproperty="surf_prop_1" >
+		<volumeref ref="Detector"/>
+	</skinsurface>-->
+	
+	<bordersurface name="border_surface_1" surfaceproperty="surf_prop_1" >
+		<physvolref ref="Detector"/>
+		<physvolref ref="Detector2"/>
+	</bordersurface>
+</structure>
+
+<setup name="Default" version="1.0" >
+	<world ref="World" />
+</setup>
+
+</gdml>

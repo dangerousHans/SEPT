@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE gdml [
+	<!ENTITY MATERIALS SYSTEM "./inc/materials_marquardt.gdml">
+	<!ENTITY COLORS SYSTEM "./inc/colors.gdml">
+	<!ENTITY TRIGONOMETRIC SYSTEM "./inc/TrigonometricFunctions.gdml">
+	<!ENTITY OPTICAL_PROPERTIES SYSTEM "./inc/optical_marquardt.gdml">
+]>
+<!--
+GDML for PET Simulation! O_o
+Important for tesselated solids: faces must be described anti-clockwise when looking from the outside of the solid otherwise there will be an Inf loop in the simulation!
+-->
+
+<gdml xmlns:gdml="http://cern.ch/2001/Schemas/GDML"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="schema/gdml.xsd" >
+	
+<!-- here the files from the ./inc/ directory are loaded and included -->
+&OPTICAL_PROPERTIES;
+&TRIGONOMETRIC;
+&COLORS;
+&MATERIALS;
+
+<define>
+	<!-- Quantitys -->
+	<quantity name="cutValueWorld"		type="length" value="100/1000" unit="mm" />
+	<constant name="det4z"		type="length" value="0.32" />
+	<constant name="det4r"		type="length" value="2" />
+	<constant name="det2z"		type="length" value="0.1" />
+	<constant name="det2r"		type="length" value="0.578" />
+	<constant name="totz"		type="length" value="116.8" />
+	<constant name="scintr"		type="length" value="34.8" />
+	<constant name="scintz"		type="length" value="82.6" />
+	<constant name="middler"	type="length" value="20.7" />
+	<constant name="subr"		type="length" value="28.2" />
+	<constant name="cher"		type="length" value="38.1" />
+	<constant name="chez"		type="length" value="10" />
+
+	<position name="origin" x="" y="" z="" lunit="cm"/>
+	<position name="pos1" x="0" y="0" z="0.96" unit="cm"/>
+	<position name="pos2" x="0" y="0" z="1.115" unit="cm"/>
+	<position name="pos3" x="0" y="0" z="2.076" unit="cm"/>
+	<position name="pos4" x="0" y="0" z="2.865" unit="cm"/>
+	<position name="pos5" x="0" y="0" z="3.655" unit="cm"/>
+	<position name="possc" x="0" y="0" z="-0.39" unit="cm"/>
+	<position name="posche" x="0" y="0" z="43.5+2.7+chez/2" unit="mm"/>
+	<position name="posdummy" x="0" y="0" z="43.5+2.7+(chez+0.05)/2-0.05" unit="mm"/>
+	<position name="pospmtdummy" x="0" y="0" z="43.5+2.7+chez+0.001/2+50" unit="mm"/>
+	<rotation name="nix" z="0" unit="deg"/>
+	<rotation name="foil" x="0" y="180" z="0" unit="deg"/>
+	<position name="null" x="0" y="0" z="0" unit="cm"/>	
+	<position name="sub tube pos" x="0" y="0" z="scintz/2-36/2" unit="mm"/>
+	<position name="cone pos1" x="0" y="0" z="-scintz/2-26.7+70.5/2" unit="mm"/>
+	<position name="cone pos2" x="0" y="0" z="-45.3/2-30.7/2" unit="mm"/>
+	<position name="posalu" x="0" y="0" z="-42.6+45.3/2+2" unit="mm"/>
+	<position name="posholding" x="0" y="0" z="3+39.5/2" unit="mm"/>
+	<position name="posring2" x="0" y="0" z="0.65+1.55/2+1.8/2" unit="mm"/>
+	<position name="posringholding" x="0" y="0" z="7.95-43.5/2" unit="mm"/>
+	<position name="posrings" x="0" y="0" z="3+39.5/2+7.95-43.5/2" unit="mm"/>
+	<position name="posground2" x="0" y="0" z="0.5" unit="mm"/>
+	<position name="posground" x="0" y="0" z="0.5/2+3+39.5+0.2" unit="mm"/>
+	<position name="posnickel" x="0" y="0" z="5.5+0.0018/2" unit="mm"/>
+	<position name="posepoxy" x="0" y="0" z="0+0.05" unit="mm"/>
+
+</define>
+<solids>
+	<opticalsurface name="surf_prop_1" model="unified" finish="polished" type="dielectric_dielectric" value="1.0" />
+	<opticalsurface name="surf_prop_2" model="unified" finish="groundfrontpainted" type="dielectric_dielectric" value="0" >
+	        <property name="REFLECTIVITY" ref="REFLECTIVITY_EPOXY"/>
+	</opticalsurface>
+	<!-- World -->
+	<tube name="Detector1"	rmin="0"	rmax="det2r - 0.01"	z="det2z*0.106"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "cm"/>
+	<tube name="Detector2"	rmin="0"	rmax="det2r"	z="det2z"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "cm"/>
+	<tube name="Detector3"	rmin="0"	rmax="det4r"	z="det4z-0.025"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "cm"/>
+	<tube name="Detector4"	rmin="0"	rmax="det4r"	z="det4z"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "cm"/>
+	<tube name="Detector5"	rmin="0"	rmax="det4r"	z="det4z"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "cm"/>
+	<tube name="cherenkov"	rmin="0"	rmax="cher"	z="chez"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "mm"/>
+	<tube name="black dummy"	rmin="0"	rmax="cher+0.05"	z="chez+0.05"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "mm"/>
+	<tube name="pmtdummy"	rmin="0"	rmax="cher-15."	z="0.001"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "mm"/>
+	<tube name="middle tube"	rmin="0"	rmax="middler"	z="totz"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "mm"/>
+	<tube name="sub tube"	rmin="0"	rmax="subr"	z="36"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "mm"/>
+	<tube name="tube1"	rmin="0"	rmax="scintr"	z="scintz"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "mm"/>
+	<cone name="cone1"	rmin1="0"	rmax1="37.65"	rmin2="0"	rmax2="0"	z="70.5"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "mm"/>
+	<cone name="cone2"	rmin1="36.95"	rmax1="37.45"	rmin2="20"	rmax2="20.5"	z="30.7"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "mm"/>
+	<tube name="middle tube2"	rmin="middler-0.7"	rmax="middler-0.2"	z="45.3"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "mm"/>	
+	<tube name="holding"	rmin="21"	rmax="28"	z="39.5"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "mm"/>	
+	<tube name="ring1"	rmin="det2r*10 "	rmax="23.95"	z="1.55"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "mm"/>	
+	<tube name="ring2"	rmin="det2r*10 + 0.01*10"	rmax="23.975"	z="1.8"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "mm"/>
+	<tube name="ground1"	rmin="0"	rmax="38.1"	z="0.5"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "mm"/>
+	<tube name="ground2"	rmin="middler"	rmax="38.1"	z="1.5"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "mm"/>
+	<tube name="nickel"	rmin="0"	rmax="middler-0.01"	z="0.0018"	startphi="0"	deltaphi="360"	aunit="deg"	lunit= "mm"/>				
+	<sphere name = "suprasilfoil" 	rmin="56.3-0.016" 	rmax="56.3" 	deltaphi="360" 	deltatheta="27" 	aunit="deg"	lunit= "mm"/>
+	<subtraction name = "scintpre1" >
+		<first ref="tube1" />
+		<second ref="middle tube"/>
+		<positionref ref="null" />
+		<rotationref ref="nix" />
+	</subtraction>
+	<subtraction name = "scintpre2" >
+		<first ref="scintpre1" />
+		<second ref="sub tube"/>
+		<positionref ref="sub tube pos" />
+		<rotationref ref="nix" />
+	</subtraction>
+	<subtraction name = "scint" >
+		<first ref="scintpre2" />
+		<second ref="cone1"/>
+		<positionref ref="cone pos1" />
+		<rotationref ref="nix" />
+	</subtraction>	
+	<union name = "aluminium" >
+		<first ref="middle tube2" />
+		<second ref="cone2"/>
+		<positionref ref="cone pos2" />
+		<rotationref ref="nix" />
+	</union>
+	<union name = "rings" >
+		<first ref="ring1" />
+		<second ref="ring2"/>
+		<positionref ref="posring2" />
+		<rotationref ref="nix" />
+	</union>
+	<subtraction name = "holdings" >
+		<first ref="holding" />
+		<second ref="rings"/>
+		<positionref ref="posringholding" />
+		<rotationref ref="nix" />
+	</subtraction>	
+	<subtraction name = "epoxy" >
+		<first ref="black dummy" />
+		<second ref="cherenkov"/>
+		<positionref ref="posepoxy" />
+		<rotationref ref="nix" />
+	</subtraction>	
+	<union name = "ground" >
+		<first ref="ground1" />
+		<second ref="ground2"/>
+		<positionref ref="posground2" />
+	</union>
+
+
+
+	<sphere name = "World" rmin="0" rmax="100" deltaphi="360" deltatheta="180" aunit="deg" lunit="cm" />
+</solids>
+<structure>
+	<volume name="Detector1">
+		<materialref ref="Silicon" />
+		<solidref ref="Detector1" />
+		<colorref ref="clGreen1" />
+		<sd detail="true" zeroE="true" />
+	</volume>
+	<volume name="Detector2">
+		<materialref ref="Silicon" />
+		<solidref ref="Detector2" />
+		<colorref ref="clGreen1" />
+		<sd detail="true" zeroE="true" />
+	</volume>
+	<volume name="Detector3">
+		<materialref ref="Silicon" />
+		<solidref ref="Detector3" />
+		<colorref ref="clGreen1" />
+		<sd detail="true" zeroE="true" />
+	</volume>
+	<volume name="Detector4">
+		<materialref ref="Silicon" />
+		<solidref ref="Detector4" />
+		<colorref ref="clGreen1" />
+		<sd detail="true" zeroE="true" />
+	</volume>
+	<volume name="Detector5">
+		<materialref ref="Silicon" />
+		<solidref ref="Detector5" />
+		<colorref ref="clGreen1" />
+		<sd detail="true" zeroE="true" />
+	</volume>
+	<volume name="scint">
+		<materialref ref="Scintillator" />
+		<solidref ref="scint" />
+		<colorref ref="clRed1" />
+		<sd detail="true" zeroE="true" />
+	</volume>
+	<volume name="cherenkov">
+		<materialref ref="Saphire" />
+		<solidref ref="cherenkov" />
+		<colorref ref="clYellow1" />
+	<!--	<sd detail="true" zeroE="true" />-->
+	</volume>
+	<volume name="epoxy">
+		<materialref ref="epoxy" />
+<!--		<materialref ref="Saphire" />-->
+		<solidref ref="epoxy" />
+		<colorref ref="clYellow4" />
+<!--				<sd detail="true" zeroE="true" />-->
+	</volume>
+	<volume name="pmtdummy">
+		<materialref ref="HiVacuum" />
+<!--		<materialref ref="Saphire" />-->
+		<solidref ref="pmtdummy" />
+		<colorref ref="clYellow3" />
+		<sd detail="true" zeroE="true" />
+	</volume>
+	<volume name="aluminium">
+		<materialref ref="Aluminium" />
+		<solidref ref="aluminium" />
+		<colorref ref="clGray2" />
+
+	</volume>
+	<volume name="suprasil">
+		<materialref ref="Suprasil" />
+		<solidref ref="suprasilfoil" />
+		<colorref ref="clGray2" />
+
+	</volume>
+	<volume name="holdings">
+		<materialref ref="Delrin" />
+		<solidref ref="holdings" />
+		<colorref ref="clGray2" />
+
+	</volume>
+	<volume name="rings">
+		<materialref ref="Pyrex" />
+		<solidref ref="rings" />
+		<colorref ref="clGray2" />
+
+	</volume>
+	<volume name="ground">
+		<materialref ref="Aluminium" />
+		<solidref ref="ground" />
+		<colorref ref="clGray2" />
+
+	</volume>
+	<volume name="nickel">
+		<materialref ref="Nickel" />
+		<solidref ref="nickel" />
+		<colorref ref="clGray2" />
+	</volume>
+	<!-- subworld assembly -->
+	<volume name="SubWorld">
+		<materialref ref="HiVacuum" />
+		<solidref ref="World" />
+		<colorref ref="clWhite" />
+		<region cutValue="cutValueWorld" />
+		<physvol>
+			<volumeref ref="Detector1" />
+			<sdID id="1"/>
+			<positionref ref="pos1" />
+		</physvol>
+		<physvol>
+			<volumeref ref="Detector2" />
+			<sdID id="2"/>
+			<positionref ref="pos2" />
+		</physvol>
+		<physvol>
+			<volumeref ref="Detector3" />
+			<sdID id="3"/>
+			<positionref ref="pos3" />
+		</physvol>
+		<physvol>
+			<volumeref ref="Detector4" />
+			<sdID id="4"/>
+			<positionref ref="pos4" />
+		</physvol>
+		<physvol>
+			<volumeref ref="Detector5" />
+			<sdID id="5"/>
+			<positionref ref="pos5" />
+		</physvol>
+		<physvol>
+			<volumeref ref="scint" />
+			<sdID id="6"/>
+			<positionref ref="possc" />
+		</physvol>
+		<physvol name ="cherenkov">
+			<volumeref ref="cherenkov" />
+			<sdID id="8"/>
+			<positionref ref="posche" />
+		</physvol>
+		<physvol name ="epoxy">
+			<volumeref ref="epoxy" />
+			<positionref ref="posdummy" />
+		</physvol>
+		<physvol name ="pmtdummy">
+			<volumeref ref="pmtdummy" />
+			<sdID id="7"/>
+			<positionref ref="pospmtdummy" />
+		</physvol>
+		<physvol>
+			<volumeref ref="aluminium" />
+			<positionref ref="posalu" />
+		</physvol>
+		<physvol>
+			<volumeref ref="suprasil" />
+			<positionref ref="null" />
+			<rotationref ref="foil" />
+		</physvol>
+		<physvol>
+			<volumeref ref="holdings" />
+			<positionref ref="posholding" />
+		</physvol>
+		<physvol>
+			<volumeref ref="rings" />
+			<positionref ref="posrings" />
+		</physvol>
+		<physvol>
+			<volumeref ref="ground" />
+			<positionref ref="posground" />
+		</physvol>
+		<physvol>
+			<volumeref ref="nickel" />
+			<positionref ref="posnickel" />
+		</physvol>
+	</volume>
+	<volume name="World" >
+		<materialref ref="HiVacuum" />
+		<solidref ref="World" />
+		<colorref ref="clWhite" />
+		<physvol name ="SubWorld">
+			<volumeref ref="SubWorld" />
+			<positionref ref="origin" />
+		</physvol>
+	</volume>
+	<bordersurface name="surface_che" surfaceproperty="surf_prop_1">
+		<physvolref ref ="cherenkov"/>
+		<physvolref ref ="SubWorld"/>
+	</bordersurface>
+	<bordersurface name="surface_black" surfaceproperty="surf_prop_2">
+		<physvolref ref ="cherenkov"/>
+		<physvolref ref ="epoxy"/>
+	</bordersurface>
+</structure>
+
+<setup name="Default" version="1.0" >
+	<world ref="World" />
+</setup>
+
+</gdml>

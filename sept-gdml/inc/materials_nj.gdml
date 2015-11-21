@@ -1,0 +1,111 @@
+<materials>
+<!--<element Z="1." formula="H" name="Hydrogen" >
+	<atom type="A" value = "1.0079" />
+</element>-->
+
+<material name="AluminiumAlloy" formula="AlZnMgCu_15">
+	<D value="2.78" unit="g/cm3" />
+	<fraction n="0.8852" ref="Al" />
+	<fraction n="0.0023" ref="Cr" />
+	<fraction n="0.015" ref="Cu" />
+	<fraction n="0.005" ref="Fe" />
+	<fraction n="0.025" ref="Mg" />
+	<fraction n="0.003" ref="Mn" />
+	<fraction n="0.004" ref="Si" />
+	<fraction n="0.056" ref="Zn" />
+	<fraction n="0.002" ref="Ti" />
+	<fraction n="0.0025" ref="Zr" />
+</material>
+<material name="Kapton" formula="Kapton">
+	<D value="1.43" unit="g/cm3" />
+	<composite n="22" ref="C" />
+	<composite n="10" ref="H" />
+	<composite n= "2" ref="N" />
+	<composite n= "5" ref="O" />
+</material>
+<material name="BGO" formula="BGO">
+	<D value="7.13" unit="g/cm3" />
+	<composite n="12" ref="O" />
+	<composite n= "3" ref="Ge" />
+	<composite n= "4" ref="Bi" />
+</material>
+<material name="GSO" formula="GSO">
+	<D value="6.71" unit="g/cm3" />
+	<composite n= "1" ref="Si" />
+	<composite n= "2" ref="Gd" />
+	<composite n= "5" ref="O" />
+</material>
+<material name="LSO" formula="Lutetiumoxyorthosilicat">
+	<D value="7.3" unit="g/cm3" />
+	<composite n= "2" ref="Lu" />
+	<composite n= "1" ref="Si" />
+	<composite n= "5" ref="O" />
+</material>
+
+<material name="Ceramic" formula="Al2O2">
+	<D value="3.67" unit="g/cm3" />
+	<composite n= "2" ref="Al" />
+	<composite n= "2" ref="O" />
+</material>
+
+<material name="Methylchlorid" formula="CH3Cl">
+	<D value="0.00231" unit="g/cm3" />
+	<composite n= "1" ref="C" />
+	<composite n= "3" ref="H" />
+	<composite n= "1" ref="Cl" />
+</material>
+
+<material name="DowCorning_old" formula="SiOCH3Cl">
+	<D value="1.077" unit="g/cm3" />
+	<composite n= "1" ref="Si" />
+	<composite n= "1" ref="O" />
+	<composite n= "2" ref="C" />
+	<composite n= "6" ref="H" />
+	<composite n= "2" ref="Cl" />
+</material>
+
+<material name="DowCorning" formula="SiOCH3Cl">
+	<D value="2.660" unit="g/cm3" />
+	<composite n= "1" ref="Si" />
+	<composite n= "1" ref="O" />
+	<composite n= "2" ref="C" />
+	<composite n= "6" ref="H" />
+	<composite n= "2" ref="Cl" />
+</material>
+
+<material Z="14." formula="Si" name="Silicon" >
+	<D value="2.3296" unit="g/cm3" />
+	<atom type="A" value="28.0855" />
+</material>
+
+<material name="Silicondioxide" formula="SiO2">
+	<D value="2.660" unit="g/cm3" />
+	<composite n= "1" ref="Si" />
+	<composite n= "2" ref="O" />
+</material>
+
+<material name="PVT" formula="PVT">
+	<D value="1.03" unit="g/cm3" />
+	<fraction n= "0.5245" ref="H" />
+	<fraction n= "0.4755" ref="C" />
+</material>
+
+<material name="PTFE" formula="PTFE">
+	<D value="2.16" unit="g/cm3" />
+	<composite n= "2" ref="C" />
+	<composite n= "4" ref="F" />
+</material>
+<material name="FR4" formula="FR4">
+	<D value="1.85" unit="g/cm3" />
+	<composite n= "249" ref="C" />
+	<composite n= "366" ref="O" />
+	<composite n= "450" ref="H" />
+	<composite n= "8" ref="N" />
+	<composite n= "163" ref="Si" />
+</material>
+<material name="HiVacuum" formula="Vacuum">
+	<D value ="1.29e-16" unit="g/cm3"/>
+	<fraction n="0.7" ref="N"/>
+	<fraction n="0.3" ref="O"/>
+</material>
+</materials>

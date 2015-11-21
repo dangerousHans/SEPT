@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+Constants:
+---------------------------------------------------------------------------
+<constant name="PI" value="1.*pi"/>
+
+
+Positions and Rotations
+---------------------------------------------------------------------------
+<position name="halfsensor_pos" unit="mm" x="-6.0" y="-9.5" z="-13.05" />
+<position name="silicon1_pos" unit="mm" x="0" y="0" z="-0.000415" />
+<position name="silicon2_pos" unit="mm" x="0" y="0" z="-0.000415" />
+<position name="guard_ring_pos" unit="mm" x="0" y="0" z="-0.000175" />
+<position name="center_pos" unit="mm" x="0" y="0" z="-0.000175" />
+<position name="guard_ring_pos" unit="mm" x="0" y="0" z="-0.000175" />
+<position name="center_pos" unit="mm" x="0" y="0" z="-0.000175" />
+<position name="pips1_pos" unit="mm" x="0" y="0" z="-1.2" />
+<position name="pips2_pos" unit="mm" x="0" y="0" z="0.1" />
+<position name="detectorcover_pos" unit="mm" x="0" y="0" z="2.4" />
+<position name="detectorbottom_pos" unit="mm" x="0" y="0" z="-2.6" />
+<position name="detectorwall_pos" unit="mm" x="0" y="0" z="-0.2" />
+<position name="detector_pos" unit="mm" x="6.0" y="9.5" z="13.05" />
+<position name="foil_core_pos" unit="mm" x="0" y="0" z="0" />
+<position name="foil_pos" unit="mm" x="6.0" y="9.5" z="17.4" />
+<position name="magnet1_pos" unit="mm" x="6.0" y="-2.5" z="0" />
+<position name="magnet2_pos" unit="mm" x="6.0" y="21.5" z="0" />
+<position name="wall_pos" unit="mm" x="0" y="0" z="0" />
+<position name="m_aring00_pos" unit="mm" x="0" y="0" z="3.3" />
+<position name="m_aring01_pos" unit="mm" x="0" y="0" z="0.766666666667" />
+<position name="m_aring02_pos" unit="mm" x="0" y="0" z="-1.76666666667" />
+<position name="magnet_apperture_pos" unit="mm" x="6.0" y="9.5" z="-13.8" />
+<position name="wall_pos" unit="mm" x="0" y="0" z="0" />
+<position name="f_aring00_pos" unit="mm" x="0" y="0" z="7.2" />
+<position name="f_aring01_pos" unit="mm" x="0" y="0" z="4.12" />
+<position name="f_aring02_pos" unit="mm" x="0" y="0" z="1.04" />
+<position name="f_aring03_pos" unit="mm" x="0" y="0" z="-2.04" />
+<position name="f_aring04_pos" unit="mm" x="0" y="0" z="-5.12" />
+<position name="foil_apperture_pos" unit="mm" x="6.0" y="9.5" z="26.3" />
+<position name="house_V1_pos" unit="mm" x="-3.5" y="9.5" z="0" />
+<position name="house_V2_pos" unit="mm" x="15.5" y="9.5" z="0" />
+<position name="mag_delrin_pos" unit="mm" x="6.0" y="9.5" z="9.6" />
+<position name="foil_delrin_pos" unit="mm" x="6.0" y="9.5" z="16.25" />
+<position name="mag_app_plate_pos" unit="mm" x="6.0" y="9.5" z="-9.0" />
+<position name="mag_det_plate_pos" unit="mm" x="6.0" y="9.5" z="8.5" />
+<position name="foil_det_plate_pos" unit="mm" x="6.0" y="9.5" z="17.6" />
+<position name="World_pos" unit="mm" x="0" y="0" z="0" />
+
+<rotation name="RotateX180+" x="PI" unit="rad" />
+<rotation name="RotateX180+" x="PI" unit="rad" />
+
+
+Solids
+---------------------------------------------------------------------------
+<box name="sensor" x="800.0" y="800.0" z="800.0" lunit="mm" />
+<box name="halfsensor" x="400.0" y="400.0" z="400.0" lunit="mm" />
+<tube name="detectorstack" rmin="0" rmax="13.8" z="5.7" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<tube name="pips" rmin="0" rmax="7.085" z="0.3" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<tube name="silicon" rmin="0" rmax="7.084999" z="0.298828" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<tube name="guard_ring" rmin="4.207" rmax="5.974" z="0.29818" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<tube name="center" rmin="0" rmax="4.107" z="0.29818" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<tube name="detectorcover" rmin="5.3" rmax="13.799999" z="0.899998" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<tube name="detectorbottom" rmin="5.3" rmax="13.799999" z="0.499998" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<tube name="detectorwall" rmin="12.35" rmax="13.799999" z="4.299998" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<tube name="foil" rmin="0" rmax="5.3" z="0.005" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<tube name="foil_core" rmin="0" rmax="5.299999" z="0.0048" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<box name="magnet" x="16.0" y="8.0" z="16.0" lunit="mm" />
+<cone name="magnet_apperture" rmin1="8.61956313993" rmax1="11.8" rmin2="10.2" rmax2="11.8" z="7.6" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<tube name="wall" rmin="10.8" rmax="11.79" z="7.58" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<cone name="m_aring00" rmin1="10.0020477816" rmax1="10.79" rmin2="10.21" rmax2="10.79" z="0.98" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<cone name="m_aring01" rmin1="9.47523549488" rmax1="10.79" rmin2="10.0019716719" rmax2="10.79" z="0.98" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<cone name="m_aring02" rmin1="8.94842320819" rmax1="10.79" rmin2="9.50991918559" rmax2="10.79" z="0.98" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<cone name="foil_apperture" rmin1="4.64288888889" rmax1="9.3" rmin2="6.2" rmax2="9.3" z="15.4" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<tube name="wall" rmin="8.3" rmax="9.29" z="15.38" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<cone name="f_aring00" rmin1="6.10888888889" rmax1="8.29" rmin2="6.21" rmax2="8.29" z="0.98" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<cone name="f_aring01" rmin1="5.79746666667" rmax1="8.29" rmin2="6.39280160449" rmax2="8.29" z="0.98" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<cone name="f_aring02" rmin1="5.48604444444" rmax1="8.29" rmin2="6.19380252749" rmax2="8.29" z="0.98" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<cone name="f_aring03" rmin1="5.17462222222" rmax1="8.29" rmin2="6.06101057999" rmax2="8.29" z="0.98" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<cone name="f_aring04" rmin1="5.86969350649" rmax1="8.29" rmin2="4.96431111111" rmax2="8.29" z="0.98" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<box name="house" x="2.999998" y="31.999998" z="15.999998" lunit="mm" />
+<tube name="mag_delrin" rmin="5.300001" rmax="13.799999" z="1.199998" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<tube name="foil_delrin" rmin="5.300001" rmax="13.799999" z="0.699998" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<tube name="mag_app_plate" rmin="8.500001" rmax="13.799999" z="1.999998" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<tube name="mag_det_plate" rmin="5.300001" rmax="13.799999" z="0.999998" deltaphi="2*PI" aunit="rad" lunit="mm" />
+<tube name="foil_det_plate" rmin="5.300001" rmax="13.799999" z="1.999998" deltaphi="2*PI" aunit="rad" lunit="mm" />
+
+
+Structure
+---------------------------------------------------------------------------
+<structure>
+	<volume name="guard_ring" >
+		<materialref  ref="detSi" />
+		<solidref     ref="guard_ring" />
+		<colorref     ref="clWhite" />
+		<sd detail="true" zeroE="true" />
+	</volume>
+
+	<volume name="center" >
+		<materialref  ref="detSi" />
+		<solidref     ref="center" />
+		<colorref     ref="clWhite" />
+		<sd detail="true" zeroE="true" />
+	</volume>
+
+	<volume name="detectorcover" >
+		<materialref  ref="Al" />
+		<solidref     ref="detectorcover" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="detectorbottom" >
+		<materialref  ref="Al" />
+		<solidref     ref="detectorbottom" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="detectorwall" >
+		<materialref  ref="Al" />
+		<solidref     ref="detectorwall" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="foil_core" >
+		<materialref  ref="ParyleneN" />
+		<solidref     ref="foil_core" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="magnet" >
+		<materialref  ref="NdFeB" />
+		<solidref     ref="magnet" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="wall" >
+		<materialref  ref="Al" />
+		<solidref     ref="wall" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="m_aring00" >
+		<materialref  ref="Al" />
+		<solidref     ref="m_aring00" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="m_aring01" >
+		<materialref  ref="Al" />
+		<solidref     ref="m_aring01" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="m_aring02" >
+		<materialref  ref="Al" />
+		<solidref     ref="m_aring02" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="wall" >
+		<materialref  ref="Al" />
+		<solidref     ref="wall" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="f_aring00" >
+		<materialref  ref="Al" />
+		<solidref     ref="f_aring00" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="f_aring01" >
+		<materialref  ref="Al" />
+		<solidref     ref="f_aring01" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="f_aring02" >
+		<materialref  ref="Al" />
+		<solidref     ref="f_aring02" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="f_aring03" >
+		<materialref  ref="Al" />
+		<solidref     ref="f_aring03" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="f_aring04" >
+		<materialref  ref="Al" />
+		<solidref     ref="f_aring04" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="house" >
+		<materialref  ref="Al" />
+		<solidref     ref="house" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="mag_delrin" >
+		<materialref  ref="Al" />
+		<solidref     ref="mag_delrin" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="foil_delrin" >
+		<materialref  ref="Al" />
+		<solidref     ref="foil_delrin" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="mag_app_plate" >
+		<materialref  ref="Al" />
+		<solidref     ref="mag_app_plate" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="mag_det_plate" >
+		<materialref  ref="Al" />
+		<solidref     ref="mag_det_plate" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+	<volume name="foil_det_plate" >
+		<materialref  ref="Al" />
+		<solidref     ref="foil_det_plate" />
+		<colorref     ref="clWhite" />
+	</volume>
+
+
+	<volume name="foil_apperture" >
+		<materialref  ref="Space" />
+		<solidref     ref="foil_apperture" />
+		<colorref     ref="clWhite" />
+
+		<physvol>
+			<volumeref   ref="wall" />
+			<positionref ref="wall_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="f_aring00" />
+			<positionref ref="f_aring00_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="f_aring01" />
+			<positionref ref="f_aring01_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="f_aring02" />
+			<positionref ref="f_aring02_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="f_aring03" />
+			<positionref ref="f_aring03_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="f_aring04" />
+			<positionref ref="f_aring04_pos" />
+		</physvol>
+	</volume>
+
+	<volume name="magnet_apperture" >
+		<materialref  ref="Space" />
+		<solidref     ref="magnet_apperture" />
+		<colorref     ref="clWhite" />
+
+		<physvol>
+			<volumeref   ref="wall" />
+			<positionref ref="wall_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="m_aring00" />
+			<positionref ref="m_aring00_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="m_aring01" />
+			<positionref ref="m_aring01_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="m_aring02" />
+			<positionref ref="m_aring02_pos" />
+		</physvol>
+	</volume>
+
+	<volume name="foil" >
+		<materialref  ref="Al" />
+		<solidref     ref="foil" />
+		<colorref     ref="clWhite" />
+
+		<physvol>
+			<volumeref   ref="foil_core" />
+			<positionref ref="foil_core_pos" />
+		</physvol>
+	</volume>
+
+	<volume name="silicon2" >
+		<materialref  ref="detSi" />
+		<solidref     ref="silicon" />
+		<colorref     ref="clWhite" />
+
+		<physvol>
+			<volumeref   ref="guard_ring" />
+			<positionref ref="guard_ring_pos" />
+			<sdID id="10" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="center" />
+			<positionref ref="center_pos" />
+			<sdID id="11" />
+		</physvol>
+	</volume>
+
+	<volume name="silicon1" >
+		<materialref  ref="detSi" />
+		<solidref     ref="silicon" />
+		<colorref     ref="clWhite" />
+
+		<physvol>
+			<volumeref   ref="guard_ring" />
+			<positionref ref="guard_ring_pos" />
+			<sdID id="00" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="center" />
+			<positionref ref="center_pos" />
+			<sdID id="01" />
+		</physvol>
+	</volume>
+
+	<volume name="pips2" >
+		<materialref  ref="Al" />
+		<solidref     ref="pips" />
+		<colorref     ref="clWhite" />
+
+		<physvol>
+			<volumeref   ref="silicon2" />
+			<positionref ref="silicon2_pos" />
+		</physvol>
+	</volume>
+
+	<volume name="pips1" >
+		<materialref  ref="Al" />
+		<solidref     ref="pips" />
+		<colorref     ref="clWhite" />
+
+		<physvol>
+			<volumeref   ref="silicon1" />
+			<positionref ref="silicon1_pos" />
+		</physvol>
+	</volume>
+
+	<volume name="detectorstack" >
+		<materialref  ref="Space" />
+		<solidref     ref="detectorstack" />
+		<colorref     ref="clWhite" />
+
+		<physvol>
+			<volumeref   ref="pips1" />
+			<positionref ref="pips1_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="pips2" />
+			<positionref ref="pips2_pos" />
+			<rotationref ref="RotateX180+" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="detectorcover" />
+			<positionref ref="detectorcover_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="detectorbottom" />
+			<positionref ref="detectorbottom_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="detectorwall" />
+			<positionref ref="detectorwall_pos" />
+		</physvol>
+	</volume>
+
+	<volume name="halfsensor" >
+		<materialref  ref="Space" />
+		<solidref     ref="halfsensor" />
+		<colorref     ref="clWhite" />
+
+		<physvol>
+			<volumeref   ref="detectorstack" />
+			<positionref ref="detector_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="foil" />
+			<positionref ref="foil_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="magnet" />
+			<positionref ref="magnet1_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="magnet" />
+			<positionref ref="magnet2_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="magnet_apperture" />
+			<positionref ref="magnet_apperture_pos" />
+			<rotationref ref="RotateX180+" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="foil_apperture" />
+			<positionref ref="foil_apperture_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="house" />
+			<positionref ref="house_V1_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="house" />
+			<positionref ref="house_V2_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="mag_delrin" />
+			<positionref ref="mag_delrin_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="foil_delrin" />
+			<positionref ref="foil_delrin_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="mag_app_plate" />
+			<positionref ref="mag_app_plate_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="mag_det_plate" />
+			<positionref ref="mag_det_plate_pos" />
+		</physvol>
+
+		<physvol>
+			<volumeref   ref="foil_det_plate" />
+			<positionref ref="foil_det_plate_pos" />
+		</physvol>
+	</volume>
+
+	<volume name="sensor" >
+		<materialref  ref="Space" />
+		<solidref     ref="sensor" />
+		<colorref     ref="clWhite" />
+
+		<physvol>
+			<volumeref   ref="halfsensor" />
+			<positionref ref="halfsensor_pos" />
+		</physvol>
+	</volume>
+</structure>

@@ -1,0 +1,376 @@
+<volume name="guard_ring" >
+	<materialref  ref="Silicon" />
+	<solidref     ref="guard_ring" />
+	<colorref     ref="clWhite" />
+	<sd detail="true" zeroE="true" />
+</volume>
+
+<volume name="center" >
+	<materialref  ref="Silicon" />
+	<solidref     ref="center" />
+	<colorref     ref="clWhite" />
+	<sd detail="true" zeroE="true" />
+</volume>
+
+<volume name="detectorcover" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="detectorcover" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="detectorbottom" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="detectorbottom" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="detectorwall" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="detectorwall" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="foil_core" >
+	<materialref  ref="ParyleneN" />
+	<solidref     ref="foil_core" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="magnet" >
+	<materialref  ref="NdFeB" />
+	<solidref     ref="magnet" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="wall" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="wall" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="m_aring00" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="m_aring00" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="m_aring01" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="m_aring01" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="m_aring02" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="m_aring02" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="wall" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="wall" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="f_aring00" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="f_aring00" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="f_aring01" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="f_aring01" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="f_aring02" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="f_aring02" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="f_aring03" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="f_aring03" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="f_aring04" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="f_aring04" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="house" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="house" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="mag_delrin" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="mag_delrin" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="foil_delrin" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="foil_delrin" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="mag_app_plate" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="mag_app_plate" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="mag_det_plate" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="mag_det_plate" />
+	<colorref     ref="clWhite" />
+</volume>
+
+<volume name="foil_det_plate" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="foil_det_plate" />
+	<colorref     ref="clWhite" />
+</volume>
+
+
+<volume name="foil_apperture" >
+	<materialref  ref="HiVacuum" />
+	<solidref     ref="foil_apperture" />
+	<colorref     ref="clWhite" />
+
+	<physvol>
+		<volumeref   ref="wall" />
+		<positionref ref="wall_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="f_aring00" />
+		<positionref ref="f_aring00_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="f_aring01" />
+		<positionref ref="f_aring01_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="f_aring02" />
+		<positionref ref="f_aring02_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="f_aring03" />
+		<positionref ref="f_aring03_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="f_aring04" />
+		<positionref ref="f_aring04_pos" />
+	</physvol>
+</volume>
+
+<volume name="magnet_apperture" >
+	<materialref  ref="HiVacuum" />
+	<solidref     ref="magnet_apperture" />
+	<colorref     ref="clWhite" />
+
+	<physvol>
+		<volumeref   ref="wall" />
+		<positionref ref="wall_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="m_aring00" />
+		<positionref ref="m_aring00_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="m_aring01" />
+		<positionref ref="m_aring01_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="m_aring02" />
+		<positionref ref="m_aring02_pos" />
+	</physvol>
+</volume>
+
+<volume name="foil" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="foil" />
+	<colorref     ref="clWhite" />
+
+	<physvol>
+		<volumeref   ref="foil_core" />
+		<positionref ref="foil_core_pos" />
+	</physvol>
+</volume>
+
+<volume name="silicon2" >
+	<materialref  ref="Silicon" />
+	<solidref     ref="silicon" />
+	<colorref     ref="clWhite" />
+
+	<physvol>
+		<volumeref   ref="guard_ring" />
+		<positionref ref="guard_ring_pos" />
+		<sdID id="10" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="center" />
+		<positionref ref="center_pos" />
+		<sdID id="11" />
+	</physvol>
+</volume>
+
+<volume name="silicon1" >
+	<materialref  ref="Silicon" />
+	<solidref     ref="silicon" />
+	<colorref     ref="clWhite" />
+
+	<physvol>
+		<volumeref   ref="guard_ring" />
+		<positionref ref="guard_ring_pos" />
+		<sdID id="00" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="center" />
+		<positionref ref="center_pos" />
+		<sdID id="01" />
+	</physvol>
+</volume>
+
+<volume name="pips2" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="pips" />
+	<colorref     ref="clWhite" />
+
+	<physvol>
+		<volumeref   ref="silicon2" />
+		<positionref ref="silicon2_pos" />
+	</physvol>
+</volume>
+
+<volume name="pips1" >
+	<materialref  ref="Aluminum" />
+	<solidref     ref="pips" />
+	<colorref     ref="clWhite" />
+
+	<physvol>
+		<volumeref   ref="silicon1" />
+		<positionref ref="silicon1_pos" />
+	</physvol>
+</volume>
+
+<volume name="detectorstack" >
+	<materialref  ref="HiVacuum" />
+	<solidref     ref="detectorstack" />
+	<colorref     ref="clWhite" />
+
+	<physvol>
+		<volumeref   ref="pips1" />
+		<positionref ref="pips1_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="pips2" />
+		<positionref ref="pips2_pos" />
+		<rotationref ref="RotateX180+" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="detectorcover" />
+		<positionref ref="detectorcover_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="detectorbottom" />
+		<positionref ref="detectorbottom_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="detectorwall" />
+		<positionref ref="detectorwall_pos" />
+	</physvol>
+</volume>
+
+<volume name="halfsensor" >
+	<materialref  ref="HiVacuum" />
+	<solidref     ref="halfsensor" />
+	<colorref     ref="clWhite" />
+
+	<physvol>
+		<volumeref   ref="detectorstack" />
+		<positionref ref="detector_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="foil" />
+		<positionref ref="foil_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="magnet" />
+		<positionref ref="magnet1_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="magnet" />
+		<positionref ref="magnet2_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="magnet_apperture" />
+		<positionref ref="magnet_apperture_pos" />
+		<rotationref ref="RotateX180+" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="foil_apperture" />
+		<positionref ref="foil_apperture_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="house" />
+		<positionref ref="house_V1_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="house" />
+		<positionref ref="house_V2_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="mag_delrin" />
+		<positionref ref="mag_delrin_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="foil_delrin" />
+		<positionref ref="foil_delrin_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="mag_app_plate" />
+		<positionref ref="mag_app_plate_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="mag_det_plate" />
+		<positionref ref="mag_det_plate_pos" />
+	</physvol>
+
+	<physvol>
+		<volumeref   ref="foil_det_plate" />
+		<positionref ref="foil_det_plate_pos" />
+	</physvol>
+</volume>
+

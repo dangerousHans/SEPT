@@ -1,0 +1,294 @@
+<materials>
+<element Z="1." formula="H" name="Hydrogen" >
+	<atom type="A" value = "1.0079" />
+</element>
+
+<element Z="6." formula="C" name="Carbon" >
+	<atom type="A" value="12.0108" />
+</element>
+<element Z="7." formula="N" name="Nitrogen" >
+	<atom type="A" value="14.0067" />
+</element>
+<element Z="8." formula="O" name="Oxygen" >
+	<atom type="A" value="15.9994" />
+</element>
+<element Z="9." formula="F" name="Fluor" >
+	<atom type="A" value="18.9984032" />
+</element>
+
+<element Z="12." formula="Mg" name="Magnesium" >
+	<atom type="A" value="24.3050" />
+</element>
+<element Z="13." formula="Al" name="Aluminium" >
+	<atom type="A" value="26.9815386" />
+</element>
+<element Z="14." formula="Si" name="Silicon" >
+	<atom type="A" value="28.0855" />
+</element>
+
+<element Z="17." formula="Cl" name="Chlor" >
+	<atom type="A" value="35.453" />
+</element>
+
+<element Z="22." formula="Ti" name="Titan" >
+	<atom type="A" value="47.867" />
+</element>
+<element Z="23." formula="V" name="Vanadium" >
+	<atom type="A" value="50.9415" />
+</element>
+<element Z="24." formula="Cr" name="Chrom" >
+	<atom type="A" value="51.9961" />
+</element>
+<element Z="25." formula="Mn" name="Mangan" >
+	<atom type="A" value="54.938045" />
+</element>
+<element Z="26." formula="Fe" name="Iron" >
+	<atom type="A" value="55.845" />
+</element>
+
+<element Z="29." formula="Cu" name="Copper" >
+	<atom type="A" value="63.546" />
+</element>
+<element Z="30." formula="Zn" name="Zink" >
+	<atom type="A" value="65.38" />
+</element>
+<element Z="31." formula="Ga" name="Gallium" >
+	<atom type="A" value="69.723" />
+</element>
+<element Z="32." formula="Ge" name="Germanium" >
+	<atom type="A" value="72.64" />
+</element>
+
+<element Z="40." formula="Zr" name="Zirkonium" >
+	<atom type="A" value="91.224" />
+</element>
+
+<element Z="54." formula="Xe" name="Xenon" >
+	<atom type="A" value="131.29" />
+</element>
+
+<element Z="64." formula="Gd" name="Gadolinium" >
+	<atom type="A" value="157.25" />
+</element>
+
+<element Z="71." formula="Lu" name="Lutetium" >
+	<atom type="A" value="174.9668" />
+</element>
+
+<element Z="73." formula="Ta" name="Tantalum" >
+	<atom type="A" value="180.94788" />
+</element>
+<element Z="74." formula="W" name="Tungsten" >
+	<atom type="A" value="183.84" />
+</element>
+
+<element Z="79." formula="Au" name="Gold" >
+	<atom type="A" value="196.966569" />
+</element>
+
+<element Z="82." formula="Pb" name="Lead" >
+	<atom type="A" value="207.19" />
+</element>
+<element Z="83." formula="Bi" name="Bismuth" >
+	<atom type="A" value="208.98040" />
+</element>
+
+<material name="Tantalum" Z="73.">
+	<D value="16.69" unit="g/cm3" />
+	<atom type="A" value="180.94788" />
+</material>
+<material name="Tungsten" Z="74.">
+	<D value="19.25" unit="g/cm3" />
+	<atom type="A" value="183.84" />
+</material>
+<material name="Gold" Z="79.">
+	<D value="19.30" unit="g/cm3" />
+	<atom type="A" value="196.966569" />
+</material>
+<material name="Aluminium" Z="13.">
+	<D value="2.70" unit="g/cm3" />
+	<atom type="A" value="26.9815386" />
+</material>
+<material name="Silicon" Z="14">
+	<D value="2.336" unit="g/cm3" />
+	<atom type="A" value="28.0855" />
+</material>
+<material name="Iron" Z="26">
+	<D value="7.874" unit="g/cm3" />
+	<atom type="A" value="55.845" />
+</material>
+<material name="Lead" Z="82">
+	<D value="11.35" unit="g/cm3" />
+	<atom type="A" value="207.19" />
+</material>
+<material name="Xenon" Z="54">
+	<D value="0.005458" unit="g/cm3" />
+	<atom type="A" value="131.29" />
+</material>
+<material name="Copper" Z="29">
+	<D value="8.94" unit="g/cm3" />
+	<atom type="A" value="63.546" />
+</material>
+<material name="Bismut" Z="83">
+	<D value="9.78" unit="g/cm3" />
+	<atom type="A" value="208.98040" />
+</material>
+
+<!-- Achtung Pfusch! -->
+
+<material name="Scintillator" formula="Scintillator">
+	<D value="1.032" unit="g/cm3" />
+	<composite n="1" ref="H" />
+	<composite n="1" ref="C" />
+</material>
+
+<material name="Saphire" formula="Saphire">
+	<D value="4.020" unit="g/cm3" />
+	<composite n="3" ref="O" />
+	<composite n="2" ref="Al" />
+	<property name="RINDEX" ref="RINDEX_SAPHIRE"/>
+	<property name="REFLECTIVITY" ref="REFLECTIVITY_BGO"/>
+	<property name="ABSLENGTH" ref="ABSLENGTH_SAPHIRE"/>
+	<property name="SCINTILLATIONYIELD" ref="SCINTILLATIONYIELD_SAPHIRE"/>
+	<property name="FASTTIMECONSTANT" ref="FASTTIMECONSTANT_SAPHIRE"/>
+	<property name="SLOWTIMECONSTANT" ref="SLOWTIMECONSTANT_SAPHIRE"/>
+	<property name="RESOLUTIONSCALE" ref="RESOLUTIONSCALE_SAPHIRE"/>
+	<property name="YIELDRATIO" ref="YIELDRATIO_SAPHIRE"/>
+	<property name="SLOWCOMPONENT" ref="SLOWCOMPONENT_SAPHIRE"/>
+	<property name="FASTCOMPONENT" ref="FASTCOMPONENT_SAPHIRE"/>
+</material>
+
+<material name="Suprasil" Z="10.805">
+	<D value="2.25" unit="g/cm3" />
+	<atom value="21.649" /> 
+</material>
+
+<material name="Delrin" Z="5">
+	<D value="1.37" unit="g/cm3" />
+	<atom value="11" /> 
+</material>
+
+<material name="Pyrex" Z="10.307">
+	<D value="2.23" unit="g/cm3" />
+	<atom value="20.719" /> 
+</material>
+
+<material name="Nickel" Z="28.0">
+	<D value="8.9" unit="g/cm3" />
+	<atom value="58.7" /> 
+</material><!--
+<material name="AluminiumAlloy" formula="AlZnMgCu_15">
+	<D value="2.78" unit="g/cm3" />
+	<fraction n="0.8852" ref="Aluminium" />
+	<fraction n="0.0023" ref="Chrom" />
+	<fraction n="0.015" ref="Copper" />
+	<fraction n="0.005" ref="Iron" />
+	<fraction n="0.025" ref="Magnesium" />
+	<fraction n="0.003" ref="Mangan" />
+	<fraction n="0.004" ref="Silicon" />
+	<fraction n="0.056" ref="Zink" />
+	<fraction n="0.002" ref="Titan" />
+	<fraction n="0.0025" ref="Zirkonium" />
+</material>
+<material name="Kapton" formula="Kapton">
+	<D value="1.43" unit="g/cm3" />
+	<composite n="22" ref="Carbon" />
+	<composite n="10" ref="Hydrogen" />
+	<composite n= "2" ref="Nitrogen" />
+	<composite n= "5" ref="Oxygen" />
+</material>
+<material name="BGO" formula="Kapton">
+	<D value="7.13" unit="g/cm3" />
+	<composite n="12" ref="Oxygen" />
+	<composite n= "3" ref="Germanium" />
+	<composite n= "4" ref="Bismuth" />
+</material>
+<material name="GSO" formula="Kapton">
+	<D value="6.71" unit="g/cm3" />
+	<composite n= "1" ref="Silicon" />
+	<composite n= "2" ref="Gadolinium" />
+	<composite n= "5" ref="Oxygen" />
+</material>
+<material name="LSO" formula="Lutetiumoxyorthosilicat">
+	<D value="7.4" unit="g/cm3" />
+	<composite n= "2" ref="Lutetium" />
+	<composite n= "1" ref="Silicon" />
+	<composite n= "5" ref="Oxygen" />
+</material>
+<material name="Water" formula="Water">
+	<D value="1.00" unit="g/cm3" />
+	<composite n= "2" ref="Hydrogen" />
+	<composite n= "1" ref="Oxygen" />
+</material>
+
+<material name="Air" formula="Air">
+	<D value="0.00129" unit="g/cm3" />
+	<fraction n="0.7" ref="Nitrogen"/>
+	<fraction n="0.3" ref="Oxygen"/>
+</material>
+<material name="Vacuum" formula="Vacuum">
+	<D value ="1.29e-13" unit="g/cm3"/>
+	<fraction n="0.7" ref="Nitrogen"/>
+	<fraction n="0.3" ref="Oxygen"/>
+</material>
+	<D value="4.00" unit="g/cm3" />
+	<composite n= "2" ref="Aluminium" />
+	<composite n= "3" ref="Oxygen" />
+</material>
+<material name="Myler" formula="Myler">
+	<D value="1.38" unit="g/cm3" />
+	<composite n="10" ref="Carbon" />
+	<composite n= "8" ref="Hydrogen" />
+	<composite n= "4" ref="Carbon" />
+	
+</material>
+<material name="PVC" formula="PVC">
+	<D value="1.35" unit="g/cm3" />
+	<composite n= "2" ref="Carbon" />
+	<composite n= "3" ref="Hydrogen" />
+	<composite n= "1" ref="Chlor" />
+</material>
+<material name="PVT" formula="PVT">
+	<D value="1.03" unit="g/cm3" />
+	<fraction n= "0.5245" ref="Hydrogen" />
+	<fraction n= "0.4755" ref="Carbon" />
+</material>
+<material name="PTFE" formula="PTFE">
+	<D value="2.16" unit="g/cm3" />
+	<composite n= "2" ref="Carbon" />
+	<composite n= "4" ref="Fluor" />
+</material>
+<material name="FR4" formula="FR4">
+	<D value="1.85" unit="g/cm3" />
+	<composite n= "249" ref="Carbon" />
+	<composite n= "366" ref="Oxygen" />
+	<composite n= "450" ref="Hydrogen" />
+	<composite n= "8" ref="Nitrogen" />
+	<composite n= "163" ref="Silicon" />
+</material>-->
+<material name="HiVacuum" formula="Vacuum">
+        <property name="RINDEX" ref="RINDEX_VAC"/>
+        <D value ="1.29e-16" unit="g/cm3"/>
+        <fraction n="0.7" ref="N"/>
+        <fraction n="0.3" ref="O"/>
+</material>
+<material name="PET" formula="PET">
+	<D value="0.96" unit="g/cm3" />
+	<composite n= "2" ref="Carbon" />
+	<composite n= "4" ref="Hydrogen" />
+</material>
+<material name="epoxy" formula="epoxy">
+        <property name="RINDEX" ref="RINDEX_EPOXY"/>
+	<property name="ABSLENGTH" ref="ABSLENGTH_EPOXY"/>
+	<property name="REFLECTIVITY" ref="REFLECTIVITY_EPOXY"/>
+        <D value ="1.5" unit="g/cm3"/>
+        <fraction n="0.43" ref="C"/>
+        <fraction n="0.48" ref="H"/>
+        <fraction n="0.09" ref="O"/>
+</material>
+<material name="BlackVacuum" formula="Vacuum">
+        <D value ="1.29e-16" unit="g/cm3"/>
+        <fraction n="0.7" ref="N"/>
+        <fraction n="0.3" ref="O"/>
+</material>
+</materials>

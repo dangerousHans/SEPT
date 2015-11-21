@@ -1,0 +1,11 @@
+<define>
+	<rotation name="rotateX90" x="90" unit="deg" />
+	<rotation name="rotateY90" y="90" unit="deg" />
+	<rotation name="rotateZ90" z="90" unit="deg" />
+	<rotation name="rotateX180" x="180" unit="deg" />
+	<rotation name="rotateY180" y="180" unit="deg" />
+	<rotation name="rotateZ180" z="180" unit="deg" />
+	<rotation name="rotateX270" x="270" unit="deg" />
+	<rotation name="rotateY270" y="270" unit="deg" />
+	<rotation name="rotateZ270" z="270" unit="deg" />
+</define>

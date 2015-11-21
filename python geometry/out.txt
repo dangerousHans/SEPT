@@ -1,0 +1,674 @@
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| World ||
+PVPl. Name  = World
+Rotation    = 0
+Koordinaten = [0, 0, 0]
+Material    = Space
+
+
+
+Solid  = G4Box
+Name   = sensor
+
+pX     = 400.0
+pY     = 400.0
+pZ     = 400.0
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| halfsensor ||
+PVPl. Name  = halfsensor
+Rotation    = 0
+Koordinaten = [-6.0, -9.5, -13.05]
+Material    = Space
+
+/\ 	
+
+Solid  = G4Box
+Name   = halfsensor
+
+pX     = 200.0
+pY     = 200.0
+pZ     = 200.0
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| detector ||
+PVPl. Name  = detector
+Rotation    = 0
+Koordinaten = [6.0, 9.5, 13.05]
+Material    = Space
+
+/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = detectorstack
+
+pRMin  = 0
+pRMax  = 13.8
+pDz    = 2.85
+pSPhi  = 0
+pDPhi  = 6.28318530718
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| pips1 ||
+PVPl. Name  = pips1
+Rotation    = 0
+Koordinaten = [0, 0, -1.2000000000000002]
+Material    = Al
+
+/\ 	/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = pips
+
+pRMin  = 0
+pRMax  = 7.085
+pDz    = 0.15
+pSPhi  = 0
+pDPhi  = 6.28318530718
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| silicon ||
+PVPl. Name  = silicon
+Rotation    = 0
+Koordinaten = [0, 0, -0.0004150000000000001]
+Material    = detSi
+
+/\ 	/\ 	/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = silicon
+
+pRMin  = 0
+pRMax  = 7.084999
+pDz    = 0.149414
+pSPhi  = 0
+pDPhi  = 6.28318530718
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| guard_ring ||
+PVPl. Name  = guard_ring
+Rotation    = 0
+Koordinaten = [0, 0, -0.00017500000000000005]
+Material    = detSi
+
+/\ 	/\ 	/\ 	/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = guard_ring
+
+pRMin  = 4.207
+pRMax  = 5.974
+pDz    = 0.14909
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| guard_ring ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| center ||
+PVPl. Name  = center
+Rotation    = 0
+Koordinaten = [0, 0, -0.00017500000000000005]
+Material    = detSi
+
+/\ 	/\ 	/\ 	/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = center
+
+pRMin  = 0
+pRMax  = 4.107
+pDz    = 0.14909
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| center ||
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| silicon ||
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| pips1 ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| pips2 ||
+PVPl. Name  = pips2
+Rotation    = rotateX(M_PI)
+Koordinaten = [0, 0, 0.09999999999999998]
+Material    = Al
+
+/\ 	/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = pips
+
+pRMin  = 0
+pRMax  = 7.085
+pDz    = 0.15
+pSPhi  = 0
+pDPhi  = 6.28318530718
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| silicon ||
+PVPl. Name  = silicon
+Rotation    = 0
+Koordinaten = [0, 0, -0.0004150000000000001]
+Material    = detSi
+
+/\ 	/\ 	/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = silicon
+
+pRMin  = 0
+pRMax  = 7.084999
+pDz    = 0.149414
+pSPhi  = 0
+pDPhi  = 6.28318530718
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| guard_ring ||
+PVPl. Name  = guard_ring
+Rotation    = 0
+Koordinaten = [0, 0, -0.00017500000000000005]
+Material    = detSi
+
+/\ 	/\ 	/\ 	/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = guard_ring
+
+pRMin  = 4.207
+pRMax  = 5.974
+pDz    = 0.14909
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| guard_ring ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| center ||
+PVPl. Name  = center
+Rotation    = 0
+Koordinaten = [0, 0, -0.00017500000000000005]
+Material    = detSi
+
+/\ 	/\ 	/\ 	/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = center
+
+pRMin  = 0
+pRMax  = 4.107
+pDz    = 0.14909
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| center ||
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| silicon ||
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| pips2 ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| detectorcover ||
+PVPl. Name  = detectorcover
+Rotation    = 0
+Koordinaten = [0, 0, 2.4]
+Material    = Al
+
+/\ 	/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = detectorcover
+
+pRMin  = 5.3
+pRMax  = 13.799999
+pDz    = 0.449999
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| detectorcover ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| detectorbottom ||
+PVPl. Name  = detectorbottom
+Rotation    = 0
+Koordinaten = [0, 0, -2.6]
+Material    = Al
+
+/\ 	/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = detectorbottom
+
+pRMin  = 5.3
+pRMax  = 13.799999
+pDz    = 0.249999
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| detectorbottom ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| detectorwall ||
+PVPl. Name  = detectorwall
+Rotation    = 0
+Koordinaten = [0, 0, -0.2]
+Material    = Al
+
+/\ 	/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = detectorwall
+
+pRMin  = 12.35
+pRMax  = 13.799999
+pDz    = 2.149999
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| detectorwall ||
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| detector ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| foil ||
+PVPl. Name  = foil
+Rotation    = 0
+Koordinaten = [6.0, 9.5, 17.4]
+Material    = Al
+
+/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = foil
+
+pRMin  = 0
+pRMax  = 5.3
+pDz    = 0.0025
+pSPhi  = 0
+pDPhi  = 6.28318530718
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| foil_core ||
+PVPl. Name  = foil_core
+Rotation    = 0
+Koordinaten = [0, 0, 0]
+Material    = ParyleneN
+
+/\ 	/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = foil_core
+
+pRMin  = 0
+pRMax  = 5.299999
+pDz    = 0.0024
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| foil_core ||
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| foil ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| magnet1 ||
+PVPl. Name  = magnet1
+Rotation    = 0
+Koordinaten = [6.0, -2.5, 0]
+Material    = NdFeB
+
+/\ 	/\ 	
+
+Solid  = G4Box
+Name   = magnet
+
+pX     = 8.0
+pY     = 4.0
+pZ     = 8.0
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| magnet1 ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| magnet2 ||
+PVPl. Name  = magnet2
+Rotation    = 0
+Koordinaten = [6.0, 21.5, 0]
+Material    = NdFeB
+
+/\ 	/\ 	
+
+Solid  = G4Box
+Name   = magnet
+
+pX     = 8.0
+pY     = 4.0
+pZ     = 8.0
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| magnet2 ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| magnet_apperture ||
+PVPl. Name  = magnet_apperture
+Rotation    = rotateX(M_PI)
+Koordinaten = [6.0, 9.5, -13.8]
+Material    = Space
+
+/\ 	/\ 	
+
+Solid  = G4Cons
+Name   = magnet_apperture
+
+pRmin1 = 8.61956313993
+pRmax1 = 11.8
+pRmin2 = 10.2
+pRmax2 = 11.8
+pDz    = 3.8
+pSPhi  = 0
+pDPhi  = 6.28318530718
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| wall ||
+PVPl. Name  = wall
+Rotation    = 0
+Koordinaten = [0, 0, 0]
+Material    = Al
+
+/\ 	/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = wall
+
+pRMin  = 10.8
+pRMax  = 11.79
+pDz    = 3.79
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| wall ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| aring00 ||
+PVPl. Name  = aring00
+Rotation    = 0
+Koordinaten = [0, 0, 3.3]
+Material    = Al
+
+/\ 	/\ 	/\ 	
+
+Solid  = G4Cons
+Name   = aring00
+
+pRmin1 = 10.0020477816
+pRmax1 = 10.79
+pRmin2 = 10.21
+pRmax2 = 10.79
+pDz    = 0.49
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| aring00 ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| aring01 ||
+PVPl. Name  = aring01
+Rotation    = 0
+Koordinaten = [0, 0, 0.7666666666666666]
+Material    = Al
+
+/\ 	/\ 	/\ 	
+
+Solid  = G4Cons
+Name   = aring01
+
+pRmin1 = 9.47523549488
+pRmax1 = 10.79
+pRmin2 = 10.0019716719
+pRmax2 = 10.79
+pDz    = 0.49
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| aring01 ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| aring02 ||
+PVPl. Name  = aring02
+Rotation    = 0
+Koordinaten = [0, 0, -1.7666666666666666]
+Material    = Al
+
+/\ 	/\ 	/\ 	
+
+Solid  = G4Cons
+Name   = aring02
+
+pRmin1 = 8.94842320819
+pRmax1 = 10.79
+pRmin2 = 9.50991918559
+pRmax2 = 10.79
+pDz    = 0.49
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| aring02 ||
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| magnet_apperture ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| foil_apperture ||
+PVPl. Name  = foil_apperture
+Rotation    = 0
+Koordinaten = [6.0, 9.5, 26.3]
+Material    = Space
+
+/\ 	/\ 	
+
+Solid  = G4Cons
+Name   = foil_apperture
+
+pRmin1 = 4.64288888889
+pRmax1 = 9.3
+pRmin2 = 6.2
+pRmax2 = 9.3
+pDz    = 7.7
+pSPhi  = 0
+pDPhi  = 6.28318530718
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| wall ||
+PVPl. Name  = wall
+Rotation    = 0
+Koordinaten = [0, 0, 0]
+Material    = Al
+
+/\ 	/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = wall
+
+pRMin  = 8.3
+pRMax  = 9.29
+pDz    = 7.69
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| wall ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| aring00 ||
+PVPl. Name  = aring00
+Rotation    = 0
+Koordinaten = [0, 0, 7.2]
+Material    = Al
+
+/\ 	/\ 	/\ 	
+
+Solid  = G4Cons
+Name   = aring00
+
+pRmin1 = 6.10888888889
+pRmax1 = 8.29
+pRmin2 = 6.21
+pRmax2 = 8.29
+pDz    = 0.49
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| aring00 ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| aring01 ||
+PVPl. Name  = aring01
+Rotation    = 0
+Koordinaten = [0, 0, 4.12]
+Material    = Al
+
+/\ 	/\ 	/\ 	
+
+Solid  = G4Cons
+Name   = aring01
+
+pRmin1 = 5.79746666667
+pRmax1 = 8.29
+pRmin2 = 6.39280160449
+pRmax2 = 8.29
+pDz    = 0.49
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| aring01 ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| aring02 ||
+PVPl. Name  = aring02
+Rotation    = 0
+Koordinaten = [0, 0, 1.04]
+Material    = Al
+
+/\ 	/\ 	/\ 	
+
+Solid  = G4Cons
+Name   = aring02
+
+pRmin1 = 5.48604444444
+pRmax1 = 8.29
+pRmin2 = 6.19380252749
+pRmax2 = 8.29
+pDz    = 0.49
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| aring02 ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| aring03 ||
+PVPl. Name  = aring03
+Rotation    = 0
+Koordinaten = [0, 0, -2.04]
+Material    = Al
+
+/\ 	/\ 	/\ 	
+
+Solid  = G4Cons
+Name   = aring03
+
+pRmin1 = 5.17462222222
+pRmax1 = 8.29
+pRmin2 = 6.06101057999
+pRmax2 = 8.29
+pDz    = 0.49
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| aring03 ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| aring04 ||
+PVPl. Name  = aring04
+Rotation    = 0
+Koordinaten = [0, 0, -5.12]
+Material    = Al
+
+/\ 	/\ 	/\ 	
+
+Solid  = G4Cons
+Name   = aring04
+
+pRmin1 = 5.86969350649
+pRmax1 = 8.29
+pRmin2 = 4.96431111111
+pRmax2 = 8.29
+pDz    = 0.49
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| aring04 ||
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| foil_apperture ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| house_V1 ||
+PVPl. Name  = house_V1
+Rotation    = 0
+Koordinaten = [-3.5, 9.5, 0]
+Material    = Al
+
+/\ 	/\ 	
+
+Solid  = G4Box
+Name   = house
+
+pX     = 1.499999
+pY     = 15.999999
+pZ     = 7.999999
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| house_V1 ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| house_V2 ||
+PVPl. Name  = house_V2
+Rotation    = 0
+Koordinaten = [15.5, 9.5, 0]
+Material    = Al
+
+/\ 	/\ 	
+
+Solid  = G4Box
+Name   = house
+
+pX     = 1.499999
+pY     = 15.999999
+pZ     = 7.999999
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| house_V2 ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| mag_delrin ||
+PVPl. Name  = mag_delrin
+Rotation    = 0
+Koordinaten = [6.0, 9.5, 9.600000000000001]
+Material    = Al
+
+/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = mag_delrin
+
+pRMin  = 5.300001
+pRMax  = 13.799999
+pDz    = 0.599999
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| mag_delrin ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| foil_delrin ||
+PVPl. Name  = foil_delrin
+Rotation    = 0
+Koordinaten = [6.0, 9.5, 16.25]
+Material    = Al
+
+/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = foil_delrin
+
+pRMin  = 5.300001
+pRMax  = 13.799999
+pDz    = 0.349999
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| foil_delrin ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| mag_app_plate ||
+PVPl. Name  = mag_app_plate
+Rotation    = 0
+Koordinaten = [6.0, 9.5, -9.000000000000002]
+Material    = Al
+
+/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = mag_app_plate
+
+pRMin  = 8.500001
+pRMax  = 13.799999
+pDz    = 0.999999
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| mag_app_plate ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| mag_det_plate ||
+PVPl. Name  = mag_det_plate
+Rotation    = 0
+Koordinaten = [6.0, 9.5, 8.5]
+Material    = Al
+
+/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = mag_det_plate
+
+pRMin  = 5.300001
+pRMax  = 13.799999
+pDz    = 0.499999
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| mag_det_plate ||
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|| foil_det_plate ||
+PVPl. Name  = foil_det_plate
+Rotation    = 0
+Koordinaten = [6.0, 9.5, 17.6]
+Material    = Al
+
+/\ 	/\ 	
+
+Solid  = G4Tubs
+Name   = foil_det_plate
+
+pRMin  = 5.300001
+pRMax  = 13.799999
+pDz    = 0.999999
+pSPhi  = 0
+pDPhi  = 6.28318530718
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| foil_det_plate ||
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| halfsensor ||
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|| World ||

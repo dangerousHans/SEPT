@@ -1,0 +1,11 @@
+# Sets some default verbose
+#
+/control/verbose 2
+/run/verbose 2
+/vis/scene/create
+/vis/open OGLIX
+/vis/viewer/set/viewpointThetaPhi 88 88 deg
+/vis/viewer/zoom 1
+/vis/viewer/flush
+/tracking/storeTrajectory 1
+/vis/scene/endOfEventAction accumulate

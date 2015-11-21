@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE gdml [
+	<!ENTITY MATERIALS SYSTEM "./inc/materials_marquardt.gdml">
+	<!ENTITY COLORS SYSTEM "./inc/colors.gdml">
+	<!ENTITY TRIGONOMETRIC SYSTEM "./inc/TrigonometricFunctions.gdml">
+	<!ENTITY OPTICAL_PROPERTIES SYSTEM "./inc/optical_marquardt.gdml">
+]>
+<!--
+GDML for PET Simulation! O_o
+Important for tesselated solids: faces must be described anti-clockwise when looking from the outside of the solid otherwise there will be an Inf loop in the simulation!
+-->
+
+<gdml xmlns:gdml="http://cern.ch/2001/Schemas/GDML"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="schema/gdml.xsd" >
+	
+<!-- here the files from the ./inc/ directory are loaded and included -->
+&OPTICAL_PROPERTIES;
+&TRIGONOMETRIC;
+&COLORS;
+&MATERIALS;
+
+<define>
+	<quantity name="cutValueWorld"		type="length" value="100/1000" unit="mm" />
+
+	<position name="activeAreaOffset" x="0.0" y="-1.5" z="0.75" lunit="mm"/>
+
+	<position name="origin" x="" y="" z="" lunit="mm"/>
+
+
+	<position name="detectorPos_0" x="0" y="0" z="0" lunit="mm"/>
+	<position name="detectorPos_1" x="-14" y="0" z="5" unit="mm"/>
+	<position name="detectorPos_2" x="14" y="0" z="5" unit="mm"/>
+
+	<position name="detectorPos_3" x="0" y="0" z="32" unit="mm"/>
+
+	<position name="detectorPos_4" x="-15" y="0" z="28" unit="mm"/>
+	<position name="detectorPos_5" x="15" y="0" z="28" unit="mm"/>
+
+	<position name="detectorPos_6" x="-27" y="0" z="19" unit="mm"/>
+	<position name="detectorPos_7" x="27" y="0" z="19" unit="mm"/>
+
+	<position name="detectorPos_8" x="-36" y="0" z="7" unit="mm"/>
+	<position name="detectorPos_9" x="36" y="0" z="7" unit="mm"/>
+
+
+
+	<rotation name="RotateY45+" y="45" unit="deg"/>
+	<rotation name="RotateY45-" y="-45" unit="deg"/>
+	<rotation name="RotateY60+" y="60" unit="deg"/>
+	<rotation name="RotateY60-" y="-60" unit="deg"/>
+	<rotation name="RotateY22.5+" y="30" unit="deg"/>
+	<rotation name="RotateY22.5-" y="-30" unit="deg"/>
+
+</define>
+
+
+
+
+<solids>
+
+	<!-- Composing the detector-->
+	<box name = "boundriesBox" x="14.2" y="27" z="2" lunit= "mm" />
+	<box name = "detectorActiveAreaBox" x="10" y="20" z="0.5" lunit= "mm" />
+
+	<sphere name = "World" rmin="0" rmax="200" deltaphi="360" deltatheta="180" aunit="deg" lunit="mm" />
+	
+	<!--
+	<subtraction name = "detectorBoundries" >
+		<first ref="boundriesBox" />
+		<second ref="detectorActiveAreaBox"/>
+		<positionref ref="activeAreaOffset"/>
+	</subtraction> 
+	-->
+</solids>
+
+
+<structure>
+
+	<!-- Linking detector components-->
+	<volume name="activeDetector">
+		<materialref ref="Silicon" />
+		<solidref ref="detectorActiveAreaBox" />
+		<colorref ref="clRed" />
+		<sd detail="true" zeroE="true" />
+	</volume>
+
+	<volume name="Detector">
+		<materialref ref="PET" />
+		<solidref ref="boundriesBox" />
+		<colorref ref="clGreen" />
+		<physvol>
+			<volumeref ref="activeDetector"/>
+			<positionref ref="activeAreaOffset"/>
+		</physvol>
+	</volume>
+
+
+
+	<volume name="SubWorld">
+		<materialref ref="HiVacuum" />
+		<solidref ref="World" />
+		<colorref ref="clWhite" />
+		<region cutValue="cutValueWorld" />
+
+		<physvol>
+			<volumeref ref="Detector" />
+			<sdID id="0"/>
+			<positionref ref="detectorPos_0" />
+		</physvol>
+
+		<physvol>
+			<volumeref ref="Detector" />
+			<sdID id="1"/>
+			<positionref ref="detectorPos_1" />
+			<rotationref ref="RotateY45+" />
+		</physvol>
+
+		<physvol>
+			<volumeref ref="Detector" />
+			<sdID id="2"/>
+			<positionref ref="detectorPos_2" />
+			<rotationref ref="RotateY45-" />
+		</physvol>
+
+
+		<physvol>
+			<volumeref ref="Detector" />
+			<sdID id="3"/>
+			<positionref ref="detectorPos_3" />
+		</physvol>	
+
+		<physvol>
+			<volumeref ref="Detector" />
+			<sdID id="4"/>
+			<positionref ref="detectorPos_4" />
+			<rotationref ref="RotateY22.5+" />
+		</physvol>	
+	
+		<physvol>
+			<volumeref ref="Detector" />
+			<sdID id="5"/>
+			<positionref ref="detectorPos_5" />
+			<rotationref ref="RotateY22.5-" />
+		</physvol>		
+
+		<physvol>
+			<volumeref ref="Detector" />
+			<sdID id="6"/>
+			<positionref ref="detectorPos_6" />
+			<rotationref ref="RotateY45+" />
+		</physvol>		
+
+		<physvol>
+			<volumeref ref="Detector" />
+			<sdID id="7"/>
+			<positionref ref="detectorPos_7" />
+			<rotationref ref="RotateY45-" />
+		</physvol>	
+
+		<physvol>
+			<volumeref ref="Detector" />
+			<sdID id="8"/>
+			<positionref ref="detectorPos_8" />
+			<rotationref ref="RotateY60+" />
+		</physvol>			
+
+		<physvol>
+			<volumeref ref="Detector" />
+			<sdID id="9"/>
+			<positionref ref="detectorPos_9" />
+			<rotationref ref="RotateY60-" />
+		</physvol>		
+
+	</volume>
+
+
+
+	<volume name="World" >
+		<materialref ref="HiVacuum" />
+		<solidref ref="World" />
+		<colorref ref="clWhite" />
+		<physvol name ="SubWorld">
+			<volumeref ref="SubWorld" />
+			<positionref ref="origin" />
+		</physvol>
+	</volume>
+
+</structure>
+
+<setup name="Default" version="1.0" >
+	<world ref="World" />
+</setup>
+
+</gdml>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE gdml [
+	<!ENTITY MATERIALS SYSTEM "./inc/materials_marquardt.gdml">
+	<!ENTITY COLORS SYSTEM "./inc/colors.gdml">
+	<!ENTITY TRIGONOMETRIC SYSTEM "./inc/TrigonometricFunctions.gdml">
+	<!ENTITY OPTICAL_PROPERTIES SYSTEM "./inc/optical_marquardt.gdml">
+]>
+<!--
+GDML for PET Simulation! O_o
+Important for tesselated solids: faces must be described anti-clockwise when looking from the outside of the solid otherwise there will be an Inf loop in the simulation!
+-->
+
+<gdml xmlns:gdml="http://cern.ch/2001/Schemas/GDML"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="schema/gdml.xsd" >
+	
+<!-- here the files from the ./inc/ directory are loaded and included -->
+&OPTICAL_PROPERTIES;
+&TRIGONOMETRIC;
+&COLORS;
+&MATERIALS;
+
+<define>
+	<quantity name="cutValueWorld"		type="length" value="100/1000" unit="mm" />
+
+	<position name="activeAreaOffset" x="0.0" y="-1.5" z="0.75" lunit="mm"/>
+
+	<position name="origin" x="" y="" z="" lunit="mm"/>
+
+
+	<position name="pos0" x="0" y="0" z="0" lunit="mm"/>
+
+</define>
+
+
+
+
+<solids>
+
+	<!-- Composing the detector-->
+	<box name = "boundriesBox" x="14.2" y="27" z="2" lunit= "mm" />
+	<box name = "detectorActiveAreaBox" x="10" y="20" z="0.5" lunit= "mm" />
+
+	<sphere name = "World" rmin="0" rmax="200" deltaphi="360" deltatheta="180" aunit="deg" lunit="mm" />
+
+</solids>
+
+
+<structure>
+
+	<!-- Linking detector components-->
+	<volume name="activeDetector">
+		<materialref ref="Silicon" />
+		<solidref ref="detectorActiveAreaBox" />
+		<colorref ref="clRed" />
+		<sd detail="true" zeroE="true" />
+	</volume>
+
+	<volume name="Detector">
+		<materialref ref="PET" />
+		<solidref ref="boundriesBox" />
+		<colorref ref="clGreen" />
+		<physvol>
+			<volumeref ref="activeDetector"/>
+			<positionref ref="activeAreaOffset"/>
+		</physvol>
+	</volume>
+
+
+
+	<volume name="SubWorld">
+		<materialref ref="HiVacuum" />
+		<solidref ref="World" />
+		<colorref ref="clWhite" />
+		<region cutValue="cutValueWorld" />
+
+		<physvol>
+			<volumeref ref="Detector" />
+			<sdID id="0"/>
+			<positionref ref="pos0" />
+		</physvol>
+
+	</volume>
+
+
+
+	<volume name="World" >
+		<materialref ref="HiVacuum" />
+		<solidref ref="World" />
+		<colorref ref="clWhite" />
+		<physvol name ="SubWorld">
+			<volumeref ref="SubWorld" />
+			<positionref ref="origin" />
+		</physvol>
+	</volume>
+
+</structure>
+
+<setup name="Default" version="1.0" >
+	<world ref="World" />
+</setup>
+
+</gdml>
