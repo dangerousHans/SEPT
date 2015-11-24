@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE gdml [
-	<!ENTITY MATERIALS SYSTEM "inc/materials.gdml">
 	<!ENTITY COLORS SYSTEM "inc/colors.gdml">
 	<!ENTITY TRIGONOMETRIC SYSTEM "inc/TrigonometricFunctions.gdml">
 	<!ENTITY OPTICAL_PROPERTIES SYSTEM "inc/optical.gdml">
+	<!-- Entityties for Sensor Construction -->
 	<!ENTITY HALFSENSOR_STRUCTURE SYSTEM "inc/sept_halfsensor_structure.gdml">
 	<!ENTITY HALFSENSOR_POSITIONS SYSTEM "inc/sept_halfsensor_positions.gdml"> 
 	<!ENTITY HALFSENSOR_SOLIDS SYSTEM  "inc/sept_halfsensor_solids.gdml">  ] >
@@ -16,15 +16,15 @@
 &OPTICAL_PROPERTIES;f
 &TRIGONOMETRIC;
 &COLORS;
-&MATERIALS;
 
 
 <define>
 	<position name="origin" x="0" y="0" z="0" unit="mm"/>
 	
-	<quantity name="cutValueWorld"		type="length" value="100/1000" unit="mm" />	
+	<quantity name="cutValueWorld" type="length" value="100/1000" unit="mm" />	
 
 	<constant name="PI" value="pi"/>
+	<constant name="UMD" value="1.0e-25"/> <!-- Uniiverse Mean Density -->
 
 	<rotation name="RotateX180+" x="PI" unit="rad" />
 	<rotation name="RotateX180+" x="PI" unit="rad" />
@@ -38,8 +38,15 @@
 
 
 <materials>
+	<!-- Space Material -->
+	<material name="Space" Z="1." >
+		<D value="UMD" unit="g/cm3" />
+		<atom value="1.01" />
+	</material>
+
+	<!-- Magnet Material -->
 	<element Z="5." formula="Bor" name="Bor" >
-		<atom type="A" value="10.81" />
+		<atom type="A" value="10.811" />
 	</element>
 
 	<element Z="26." formula="Fe" name="Iron" >
@@ -47,23 +54,41 @@
 	</element>
 
 	<element Z="60." formula="Nd" name="Neodym" >
-		<atom type="A" value="144.242" />
+		<atom type="A" value="144.24" />
 	</element>
 
-	<material name="NdFeB" formula="Ne2Fe14B" Z="60">
-		<D value="7.4" unit="g/cm3"/>
-		<composite n="2.0" ref="Neodym" />
-		<composite n="14.0" ref="Iron" />
-		<composite n="1.0" ref="Bor" />
+	<material name="NdFeB" formula="Ne2Fe14B">
+		<D value="7.62" unit="g/cm3" />
+		<composite n="2" ref="Neodym" />
+		<composite n="14" ref="Iron" />
+		<composite n="1" ref="Bor" />
 	</material>
 
-<!--   den schei hier noch anpassen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-	
-	<material name="ParyleneN" formula="xyz" Z="33">
-		<D value="1.0" unit="g/cm3" />
-		<composite n="2.0" ref="Neodym" />
-		<composite n="1.0" ref="Bor" />
+	<!-- Foil Material -->
+	<element Z="1." formula="H" name="Hydrogen" >
+		<atom type="A" value = "1.0079" />
+	</element>
 
+	<element Z="6." formula="C" name="Carbon" >
+		<atom type="A" value="12.0108" />
+	</element>
+	
+	<material name="ParyleneN" formula="ParyleneN">
+		<D value="1.12" unit="g/cm3" />
+		<composite n="1" ref="H" />
+		<composite n="1" ref="C" />
+	</material>
+
+	<!-- Aluminum -->
+	<material name="Aluminum" Z="13.">
+		<D value="2.7" unit="g/cm3" />
+		<atom value="26.982" />
+	</material>
+
+	<!-- Detector Silicon -->
+	<material name="detSi" Z="14." >
+		<D value="2.329" unit="g/cm3" />
+		<atom value="28.086" />
 	</material>
 </materials>
 
@@ -81,7 +106,7 @@
 	&HALFSENSOR_STRUCTURE;
 
 	<volume name="sensor" >
-		<materialref  ref="HiVacuum" />
+		<materialref  ref="Space" />
 		<solidref     ref="sensor" />
 		<colorref     ref="clWhite" />
 

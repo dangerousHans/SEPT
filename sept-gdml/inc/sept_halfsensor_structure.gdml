@@ -1,12 +1,12 @@
 <volume name="guard_ring" >
-	<materialref  ref="Silicon" />
+	<materialref  ref="detSi" />
 	<solidref     ref="guard_ring" />
 	<colorref     ref="clWhite" />
 	<sd detail="true" zeroE="true" />
 </volume>
 
 <volume name="center" >
-	<materialref  ref="Silicon" />
+	<materialref  ref="detSi" />
 	<solidref     ref="center" />
 	<colorref     ref="clWhite" />
 	<sd detail="true" zeroE="true" />
@@ -140,7 +140,7 @@
 
 
 <volume name="foil_apperture" >
-	<materialref  ref="HiVacuum" />
+	<materialref  ref="Space" />
 	<solidref     ref="foil_apperture" />
 	<colorref     ref="clWhite" />
 
@@ -176,7 +176,7 @@
 </volume>
 
 <volume name="magnet_apperture" >
-	<materialref  ref="HiVacuum" />
+	<materialref  ref="Space" />
 	<solidref     ref="magnet_apperture" />
 	<colorref     ref="clWhite" />
 
@@ -213,7 +213,7 @@
 </volume>
 
 <volume name="silicon2" >
-	<materialref  ref="Silicon" />
+	<materialref  ref="detSi" />
 	<solidref     ref="silicon" />
 	<colorref     ref="clWhite" />
 
@@ -231,7 +231,7 @@
 </volume>
 
 <volume name="silicon1" >
-	<materialref  ref="Silicon" />
+	<materialref  ref="detSi" />
 	<solidref     ref="silicon" />
 	<colorref     ref="clWhite" />
 
@@ -271,7 +271,7 @@
 </volume>
 
 <volume name="detectorstack" >
-	<materialref  ref="HiVacuum" />
+	<materialref  ref="Space" />
 	<solidref     ref="detectorstack" />
 	<colorref     ref="clWhite" />
 
@@ -303,7 +303,7 @@
 </volume>
 
 <volume name="halfsensor" >
-	<materialref  ref="HiVacuum" />
+	<materialref  ref="Space" />
 	<solidref     ref="halfsensor" />
 	<colorref     ref="clWhite" />
 
